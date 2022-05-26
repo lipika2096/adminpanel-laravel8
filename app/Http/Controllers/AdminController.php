@@ -15,7 +15,4 @@ class AdminController extends Controller
         return view('layoutdashboard', compact('name','users'));
     }
 
-    public function addcategory() {
-        return view('addcategory');
-    }
 }

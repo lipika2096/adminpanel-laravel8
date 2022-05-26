@@ -22,4 +22,4 @@ Route::get('/admin/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/admin/addcategory',[AdminController::class, 'addcategory'])->name('addcategory');
+Route::get('/admin/dashboard/addcategory',[AdminController::class, 'addcategory'])->name('addcategory');

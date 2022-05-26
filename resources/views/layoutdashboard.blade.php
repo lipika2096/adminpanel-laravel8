@@ -12,7 +12,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN: Head -->
     <head>
         <meta charset="utf-8">
-        <link href="{{asset('dist/images/logo.svg')}}" rel="shortcut icon">
+        <link href="{{asset('dist/images/logo.png')}}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Icewall admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
@@ -28,10 +28,10 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Icewall Tailwind HTML Admin Template" class="w-6" src="{{asset('dist/images/logo.svg')}}">
+                    <img alt="Icewall Tailwind HTML Admin Template" class="w-6" src="{{asset('dist/images/logo.png')}}">
                 </a>
                 <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
-            </div>
+            </div>  
             <ul class="border-t border-theme-2 py-5 hidden">
                 <li>
                     <a href="javascript:;.html" class="menu menu--active">
@@ -537,8 +537,8 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="h-full flex items-center">
                 <!-- BEGIN: Logo -->
                 <a href="" class="-intro-x hidden md:flex">
-                    <img alt="Icewall Tailwind HTML Admin Template" class="w-6" src="{{asset('dist/images/logo.svg')}}">
-                    <span class="text-white text-lg ml-3"> Ice<span class="font-medium">wall</span> </span>
+                    <img alt="Icewall Tailwind HTML Admin Template" class="w-6" src="{{asset('dist/images/logo.png')}}">
+                    <span class="text-white text-lg ml-3"> NSON<span class="font-medium">India</span> </span>
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->
@@ -740,7 +740,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <nav class="side-nav">
                     <ul>
                         <li>
-                        <a href="javascript:;.html" class="side-menu side-menu--active">
+                            <a href="javascript:;.html" class="side-menu side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title">
                                     Dashboard 
@@ -755,7 +755,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
                                 </div>
                             </a>
-                            <ul class="side-menu__sub-open">
+                            <ul class="">
                                 <li>
                                     <a href="{{route('addcategory')}}" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
@@ -771,8 +771,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
+                            <a href="javascript:;.html" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                                 <div class="side-menu__title">
                                     SubCategory
                                     <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
@@ -794,8 +794,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:;" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="shopping-bag"></i> </div>
+                            <a href="javascript:;.html" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="hard-drive"></i> </div>
                                 <div class="side-menu__title">
                                     Product
                                     <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
@@ -816,85 +816,40 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                             </ul>
                         </li>
-                        <li class="side-nav__devider my-6"></li>
-
                         <li>
-                            <a href="javascript:;" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="check-circle"></i> </div>
-                                <div class="side-menu__title">
-                                    Orders 
-                                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
-                                </div>
-                            </a>
-                            <ul class="">
-                                <li>
-                                    <a href="side-menu-light-profile-overview-1.html" class="side-menu">
-                                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> View/Manage All Orders </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="side-menu-light-profile-overview-1.html" class="side-menu">
-                                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> Completed Orders </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="side-menu-light-profile-overview-1.html" class="side-menu">
-                                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> Pending Orders </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="side-menu-light-profile-overview-1.html" class="side-menu">
-                                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> InProcess Orders </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>  
-
-                        <li class="side-nav__devider my-6"></li>
-                        <li>
-                            <a href="javascript:;" class="side-menu">
+                            <a href="javascript:;.html" class="side-menu side-menu">
                                 <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                                 <div class="side-menu__title">
-                                    Customer 
+                                    Blog 
                                     <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
                                 </div>
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="side-menu-light-users-layout-1.html" class="side-menu">
+                                    <a href="{{route('addcategory')}}" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> Add Customer </div>
+                                        <div class="side-menu__title"> Add Blog</div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="side-menu-light-users-layout-2.html" class="side-menu">
+                                    <a href="side-menu-light-dashboard-overview-2.html" class="side-menu side-menu--active">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> Manage Customer </div>
+                                        <div class="side-menu__title"> Manage Blog </div>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+                        
+                        <li class="side-nav__devider my-6"></li>
+
                         <li>
-                            <a href="javascript:;" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="trello"></i> </div>
+                            <a href="javascript:;.html" class="side-menu side-menu">
+                                <div class="side-menu__icon"> <i data-feather="hard-drive"></i> </div>
                                 <div class="side-menu__title">
-                                    User Profile 
-                                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                                    Logout 
                                 </div>
                             </a>
-                            <ul class="">
-                                <li>
-                                    <a href="side-menu-light-profile-overview-1.html" class="side-menu">
-                                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                        <div class="side-menu__title"> View Profile </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>   
+                        </li>
                     </ul>
                 </nav>
                 <!-- END: Side Menu -->
