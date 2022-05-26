@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('addblog');
     }
 
     /**
@@ -46,7 +46,7 @@ class BlogController extends Controller
      */
     public function show(blog $blog)
     {
-        //
+        return view('manageblog');
     }
 
     /**

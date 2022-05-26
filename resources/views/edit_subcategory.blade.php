@@ -24,12 +24,12 @@
                             <div> 
                                 <label for="vertical-form-1" class="form-label">Select Category name</label> <select id="category_name" name="category_name" required="" class="form-control">
                                         <option value="0">----Select Category----</option>
-                                        <option value="1">microscopes</option>
+                                        <option value="1" selected>microscopes</option>
                                 </select>
                             </div>
                             
                             <div> 
-                                <label for="vertical-form-1" class="form-label">Add Sub Category name</label> <input id="sub_category_name" name="sub_category_name" value="" type="text" required="" class="form-control" placeholder="Add Sub Category">
+                                <label for="vertical-form-1" class="form-label">Add Sub Category name</label> <input id="sub_category_name" name="sub_category_name" value="microcope subcat" type="text" required="" class="form-control" placeholder="Add Sub Category">
                             </div>
                             <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                                 <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Submit</button>
@@ -60,11 +60,11 @@
                                     <td class="border-b dark:border-dark-5">microscopes</td>
                                     <td class="border-b dark:border-dark-5">microscope subcat</td>
                                     <td class="border-b dark:border-dark-5">
-                                    <a href="{{route('edit_subcategory')}}">
+                                    <a href="http://nsonindia.com/nsonindia.com/public/admin/cat/edit/1">
                                         <i data-feather="edit" style="color:green;"></i>
                                     </a>
                                     |
-                                    <a onclick="return confirm('Do you want to delete it')" href="#">
+                                    <a onclick="return confirm('Do you want to delete it')" href="http://nsonindia.com/nsonindia.com/public/admin/cat/delete/1">
                                         <i data-feather="delete" style="color:red;"></i>
                                     </a>
                                     </td>

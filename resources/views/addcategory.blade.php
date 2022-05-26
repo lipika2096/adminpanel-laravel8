@@ -46,11 +46,11 @@
                                     <td class="border-b dark:border-dark-5">1</td>
                                     <td class="border-b dark:border-dark-5">microscopes</td>
                                     <td class="border-b dark:border-dark-5">
-                                    <a href="http://nsonindia.com/nsonindia.com/public/admin/cat/edit/1">
+                                    <a href="{{route('edit_category')}}">
                                         <i data-feather="edit" style="color:green;"></i>
                                     </a>
                                     |
-                                    <a onclick="return confirm('Do you want to delete it')" href="http://nsonindia.com/nsonindia.com/public/admin/cat/delete/1">
+                                    <a onclick="return confirm('Do you want to delete it')" href="#">
                                         <i data-feather="delete" style="color:red;"></i>
                                     </a>
                                     </td>

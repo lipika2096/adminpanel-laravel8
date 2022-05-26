@@ -57,7 +57,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+        return view('edit_category');
     }
 
     /**

@@ -809,7 +809,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
+                                    <a href="{{route('manageproduct')}}" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Manage Products </div>
                                     </a>
@@ -832,7 +832,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="side-menu-light-dashboard-overview-2.html" class="side-menu side-menu--active">
+                                    <a href="{{route('manageblog')}}" class="side-menu side-menu--active">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Manage Blog </div>
                                     </a>

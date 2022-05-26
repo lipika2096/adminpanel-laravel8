@@ -31,10 +31,22 @@ Route::get('/admin/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/admin/dashboard/addcategory',[CategoryController::class, 'index'])->name('addcategory');
+Route::get('/admin/cat',[CategoryController::class, 'index'])->name('addcategory');
 
-Route::get('/admin/dashboard/addsubcategory',[SubcategoryController::class, 'index'])->name('addsubcategory');
+Route::get('/admin/subcategory',[SubcategoryController::class, 'index'])->name('addsubcategory');
 
-Route::get('/admin/dashboard/addproduct',[ProductController::class, 'index'])->name('addproduct');
+Route::get('/admin/add_products',[ProductController::class, 'index'])->name('addproduct');
 
-Route::get('/admin/dashboard/addblog',[BlogController::class, 'index'])->name('addblog');
+Route::get('/admin/addblog',[BlogController::class, 'index'])->name('addblog');
+
+Route::get('/admin/mng_products',[ProductController::class, 'show'])->name('manageproduct');
+
+Route::get('/admin/mng_blog',[BlogController::class, 'show'])->name('manageblog');
+
+Route::get('/admin/subcategory/edit/1',[SubcategoryController::class, 'edit'])->name('edit_subcategory');
+
+Route::get('/admin/category/edit/1',[CategoryController::class, 'edit'])->name('edit_category');
+
+Route::get('/admin/edit_products/edit/1',[ProductController::class, 'edit'])->name('edit_product');
+
+Route::get('/admin/edit_blog/1',[BlogController::class, 'edit'])->name('edit_blog');

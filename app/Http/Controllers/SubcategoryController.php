@@ -57,7 +57,7 @@ class SubcategoryController extends Controller
      */
     public function edit(subcategory $subcategory)
     {
-        //
+        return view('edit_subcategory');
     }
 
     /**
