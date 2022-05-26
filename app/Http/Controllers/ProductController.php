@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\subcategory;
+use App\Models\product;
 use Illuminate\Http\Request;
 
-class SubcategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        return view('addsubcategory');
+        return view('addProduct');
     }
 
     /**
@@ -41,10 +41,10 @@ class SubcategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\subcategory  $subcategory
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(subcategory $subcategory)
+    public function show(product $product)
     {
         //
     }
@@ -52,10 +52,10 @@ class SubcategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\subcategory  $subcategory
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(subcategory $subcategory)
+    public function edit(product $product)
     {
         //
     }
@@ -64,10 +64,10 @@ class SubcategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\subcategory  $subcategory
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, subcategory $subcategory)
+    public function update(Request $request, product $product)
     {
         //
     }
@@ -75,10 +75,10 @@ class SubcategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\subcategory  $subcategory
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(subcategory $subcategory)
+    public function destroy(product $product)
     {
         //
     }

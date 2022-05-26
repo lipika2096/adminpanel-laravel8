@@ -12,7 +12,7 @@ class AdminController extends Controller
         "email"=>"lipika.software@gmail.com",
         "phone"=>"+91 9996149081"
         ); //array pass
-        return view('layoutdashboard', compact('name','users'));
+        return view('layoutdashboard', compact('users'));
     }
 
 }
