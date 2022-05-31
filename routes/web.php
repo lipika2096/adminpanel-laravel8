@@ -33,7 +33,7 @@ Route::get('/admin/dashboard', function () {
 
 Route::get('/admin/cat',[CategoryController::class, 'index'])->name('addcategory');
 Route::post('/store',[CategoryController::class, 'store'])->name('category.insert');
-Route:: get('/show',[CategoryController::classs,'show']);
+Route:: get('/show',[CategoryController::class,'show']);
 
 Route::get('/admin/subcategory',[SubcategoryController::class, 'index'])->name('addsubcategory');
 
@@ -45,10 +45,10 @@ Route::get('/admin/mng_products',[ProductController::class, 'show'])->name('mana
 
 Route::get('/admin/mng_blog',[BlogController::class, 'show'])->name('manageblog');
 
-Route::get('/admin/subcategory/edit/1',[SubcategoryController::class, 'edit'])->name('edit_subcategory');
+Route::get('/admin/subcategory/edit',[SubcategoryController::class, 'edit'])->name('edit_subcategory');
 
-Route::get('/admin/category/edit/1',[CategoryController::class, 'edit'])->name('edit_category');
+Route::get('/admin/category/edit',[CategoryController::class, 'edit'])->name('edit_category');
 
-Route::get('/admin/edit_products/edit/1',[ProductController::class, 'edit'])->name('edit_product');
+Route::get('/admin/edit_products/edit',[ProductController::class, 'edit'])->name('edit_product');
 
 Route::get('/admin/edit_blog/1',[BlogController::class, 'edit'])->name('edit_blog');
