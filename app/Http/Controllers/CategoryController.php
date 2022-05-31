@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -35,7 +36,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new category(); // model name;
+        $model->category_name = $request->post('cat_name');
+        $model->save();
+        return view('addcategory');
     }
 
     /**
@@ -46,7 +50,8 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-        //
+        $result['data'] = DB::table('categories')->get();
+        return view('addcategory', $result);
     }
 
     /**

@@ -32,6 +32,8 @@ Route::get('/admin/dashboard', function () {
 });
 
 Route::get('/admin/cat',[CategoryController::class, 'index'])->name('addcategory');
+Route::post('/store',[CategoryController::class, 'store'])->name('category.insert');
+Route:: get('/show',[CategoryController::classs,'show']);
 
 Route::get('/admin/subcategory',[SubcategoryController::class, 'index'])->name('addsubcategory');
 
