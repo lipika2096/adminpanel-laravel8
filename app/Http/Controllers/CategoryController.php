@@ -15,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-            return view('addcategory');
+        $model = new category();
+        $result['data'] = category::all(); // without Facades
+        return view('addcategory',$result);
     }
 
     /**
@@ -39,7 +41,8 @@ class CategoryController extends Controller
         $model = new category(); // model name;
         $model->category_name = $request->post('cat_name');
         $model->save();
-        return view('addcategory');
+        $result['data']= category::all(); 
+        return view('addcategory',$result);
     }
 
     /**
@@ -50,8 +53,9 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-        $result['data'] = DB::table('categories')->get();
-        return view('addcategory', $result);
+        $result['data'] = category::all(); // without Facades
+        return view('addcategory',$result);
+        
     }
 
     /**
@@ -83,8 +87,12 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(category $category, $id)
     {
-        //
+        $model = new category();
+        $model->category::find($id);
+        $model->delete();
+        $result['data']= category::all(); 
+        return view('addcategory',$result);
     }
 }
