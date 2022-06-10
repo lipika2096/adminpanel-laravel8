@@ -18,13 +18,17 @@
             <div class="report-box-2 intro-y mt-12 sm:mt-5">
                 <div class="box sm:flex">
                     <div class="px-8 py-12 flex flex-col flex-1">
-                        <form method="post" action="">
-                            <input type="hidden" name="_token" value="6Ldd7PNeo17vptphd3D8u1jUy127s9xlMffdS4bY">
+                        <form method="post" action="{{route('subcategory.insert')}}">
+                            @csrf
+                            <!-- <input type="hidden" name="_token" value="6Ldd7PNeo17vptphd3D8u1jUy127s9xlMffdS4bY"> -->
 
                             <div> 
-                                <label for="vertical-form-1" class="form-label">Select Category name</label> <select id="category_name" name="category_name" required="" class="form-control">
-                                        <option value="0">----Select Category----</option>
-                                        <option value="1">microscopes</option>
+                                <label for="vertical-form-1" class="form-label">Select Category name</label> 
+                                <select id="ddcategory" name="ddcategory" required="" class="form-control">
+                                    <option value="0">----Select Category----</option>
+                                    @foreach($data as $list)
+                                    <option value="{{$list->id}}">{{$list->category_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             
@@ -55,20 +59,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($data1 as $list)
                                 <tr>
-                                    <td class="border-b dark:border-dark-5">1</td>
-                                    <td class="border-b dark:border-dark-5">microscopes</td>
-                                    <td class="border-b dark:border-dark-5">microscope subcat</td>
+                                    <td class="border-b dark:border-dark-5">{{$list->id}}</td>
+                                    <td class="border-b dark:border-dark-5">{{$list->category_name}}</td>                                    
+                                    <td class="border-b dark:border-dark-5">{{$list->subcategory_name}}</td>
                                     <td class="border-b dark:border-dark-5">
-                                    <a href="{{route('edit_subcategory')}}">
+                                    <a href="">
                                         <i data-feather="edit" style="color:green;"></i>
                                     </a>
                                     |
-                                    <a onclick="return confirm('Do you want to delete it')" href="#">
+                                    <a onclick="return confirm('Do you want to delete it')" href="{{url('/admin/destroy/')}}/{{$list->id}}">
                                         <i data-feather="delete" style="color:red;"></i>
                                     </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         </div>

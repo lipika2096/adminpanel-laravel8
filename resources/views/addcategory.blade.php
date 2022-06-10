@@ -19,11 +19,13 @@
                 <div class="box sm:flex">
                     <div class="px-8 py-12 flex flex-col flex-1">
                         <form method="post" action="{{route('category.insert')}}">
-                        {{ csrf_field() }}
+                        @csrf
                        
                         <div class="mt-3"> 
                             <label for="vertical-form-1" class="form-label">Add Category name</label> 
                             <input id="category_name" name="cat_name" value="" type="text" required="" class="form-control" placeholder="Add category"> 
+                            @error('cat_name')
+                            <div class="text-danger">{{$message}}</div>
                         </div>
                         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                             <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Submit</button>
@@ -52,7 +54,7 @@
                                     <td class="border-b dark:border-dark-5">{{$list->id}}</td>
                                     <td class="border-b dark:border-dark-5">{{$list->category_name}}</td>
                                     <td class="border-b dark:border-dark-5">
-                                    <a href="{{route('edit_category')}}">
+                                    <a href="">
                                         <i data-feather="edit" style="color:green;"></i>
                                     </a>
                                     |

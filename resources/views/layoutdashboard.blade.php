@@ -757,7 +757,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="{{route('addcategory')}}" class="side-menu">
+                                    <a href="cat" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Add Category</div>
                                     </a>
@@ -780,7 +780,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="{{route('addsubcategory')}}" class="side-menu">
+                                    <a href="subcategory" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Add SubCategory </div>
                                     </a>
@@ -803,13 +803,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="{{route('addproduct')}}" class="side-menu">
+                                    <a href="" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Add Product </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{route('manageproduct')}}" class="side-menu">
+                                    <a href="" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Manage Products </div>
                                     </a>
@@ -826,13 +826,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="{{route('addblog')}}" class="side-menu">
+                                    <a href="" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Add Blog</div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{route('manageblog')}}" class="side-menu side-menu--active">
+                                    <a href="" class="side-menu side-menu--active">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Manage Blog </div>
                                     </a>

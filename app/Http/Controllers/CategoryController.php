@@ -38,6 +38,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'cat_name' => 'required'
+        ]);
         $model = new category(); // model name;
         $model->category_name = $request->post('cat_name');
         $model->save();
@@ -66,7 +69,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        return view('edit_category');
+        //return view('edit_category');
     }
 
     /**
@@ -89,8 +92,8 @@ class CategoryController extends Controller
      */
     public function destroy(category $category, $id)
     {
-        $model = new category();
-        $model->category::find($id);
+        $model= new category();
+        $model= category::find($id);
         $model->delete();
         $result['data']= category::all(); 
         return view('addcategory',$result);
