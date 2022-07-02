@@ -780,7 +780,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="subcategory" class="side-menu">
+                                    <a href="createsub" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Add SubCategory </div>
                                     </a>
@@ -803,13 +803,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="">
                                 <li>
-                                    <a href="" class="side-menu">
+                                    <a href="add_products" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Add Product </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="side-menu">
+                                    <a href="mng_products" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Manage Products </div>
                                     </a>

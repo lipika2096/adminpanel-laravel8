@@ -36,7 +36,7 @@
                                 <label for="vertical-form-1" class="form-label">Add Sub Category name</label> <input id="sub_category_name" name="sub_category_name" value="" type="text" required="" class="form-control" placeholder="Add Sub Category">
                             </div>
                             <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                                <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Submit</button>
+                                <input class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top" type="submit" value="Submit">
                                 <br><br>
                                 <div style="text-align: center;color:green">
                             </div>
@@ -65,11 +65,11 @@
                                     <td class="border-b dark:border-dark-5">{{$list->category_name}}</td>                                    
                                     <td class="border-b dark:border-dark-5">{{$list->subcategory_name}}</td>
                                     <td class="border-b dark:border-dark-5">
-                                    <a href="">
+                                    <a href="{{url('editsubcat')}}/{{$list->id}}">
                                         <i data-feather="edit" style="color:green;"></i>
                                     </a>
                                     |
-                                    <a onclick="return confirm('Do you want to delete it')" href="{{url('/admin/destroy/')}}/{{$list->id}}">
+                                    <a onclick="return confirm('Do you want to delete it')" href="{{url('/createsub/destroy')}}/{{$list->id}}">
                                         <i data-feather="delete" style="color:red;"></i>
                                     </a>
                                     </td>

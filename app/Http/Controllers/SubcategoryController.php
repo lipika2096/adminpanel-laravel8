@@ -76,9 +76,13 @@ class SubcategoryController extends Controller
      * @param  \App\Models\subcategory  $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(subcategory $subcategory)
+    public function edit(subcategory $subcategory,$id)
     {
-        
+        $subcat = subcategory::find($id);
+        $subcat['data'] = category::all();
+        $subcat['data1'] = subcategory::join('categories','categories.id', '=', 'subcategories.category_name')
+                 ->get(['subcategories.subcategory_name','subcategories.id','categories.category_name']);
+        return view('edit_subcategory',compact('subcat'));   
     }
 
     /**
@@ -90,7 +94,15 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, subcategory $subcategory)
     {
-        //
+        $model = subcategory::find($request->id); //  Model Name;
+        $model->category_name = $request->post('category_name');
+        $model->subcategory_name = $request->post('subcategory_name');
+        $model->save();
+      
+        $result['data'] = category::all(); // without Facades
+        $result['data1'] = subcategory::join('categories','categories.id', '=', 'subcategories.category_name')
+                 ->get(['subcategories.subcategory_name','subcategories.id','categories.category_name']);
+        return view('addsubcategory',$result);
     }
 
     /**
@@ -104,9 +116,9 @@ class SubcategoryController extends Controller
         $model= new subcategory();
         $model= subcategory::find($id);
         $model->delete();
-        $result['data'] = category::all();
+        $result['data'] = subcategory::all();
         $result['data1'] = subcategory::join('categories','categories.id', '=', 'subcategories.category_name')
                  ->get(['subcategories.subcategory_name','subcategories.id','categories.category_name']);
-        return redirect('addsubcategory',$result); 
+        return view('addsubcategory',$result); 
     }
 }

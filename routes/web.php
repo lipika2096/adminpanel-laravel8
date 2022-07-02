@@ -27,25 +27,33 @@ Route::get('/admin', function () {
     return view('login');
 });
 
-Route::get('/admin/dashboard', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('admin/cat',[CategoryController::class, 'index']);
-Route::post('admin/store',[CategoryController::class, 'store'])->name('category.insert');
-Route::get('admin/show',[CategoryController::class, 'show']);
-Route::get('admin/destroy/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
+Route::get('/cat',[CategoryController::class, 'index']);
+Route::post('/create',[CategoryController::class, 'store'])->name('category.insert');
+Route::get('/show',[CategoryController::class, 'show']);
+Route::get('/cat/destroy/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
+Route::get('/editcat/{id}',[CategoryController::class,'edit']);
+Route::post('/update_cat',[CategoryController::class,'update'])->name('category.update');
 
-Route::get('admin/subcategory',[SubcategoryController::class, 'index']);
-Route::post('admin/store',[SubcategoryController::class, 'create'])->name('subcategory.insert');
-Route::get('admin/show',[SubcategoryController::class, 'show']);
-Route::get('admin/destroy/{id}',[SubcategoryController::class,'destroy'])->name('subcategory.destroy');
+Route::get('/createsub',[SubcategoryController::class, 'index']);
+Route::post('/subcategory',[SubcategoryController::class, 'create'])->name('subcategory.insert');
+Route::get('/show',[SubcategoryController::class, 'show']);
+Route::get('/createsub/destroy/{id}',[SubcategoryController::class,'destroy'])->name('subcategory.destroy');
+Route::get('/editsubcat/{id}',[SubcategoryController::class,'edit']);
+Route::post('/update_subcat',[SubcategoryController::class,'update'])->name('subcategory.update');
 
-// Route::get('/admin/add_products',[ProductController::class, 'index'])->name('addproduct');
+Route::get('/add_products',[ProductController::class, 'index']);
+Route::post('/products_view',[ProductController::class, 'store'])->name('product.insert');
+Route::get('/mng_products',[ProductController::class, 'show']);
+Route::get('/mng_products/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
+Route::get('/editproduct/{id}',[ProductController::class,'edit']);
+Route::post('/update_product',[ProductController::class,'update'])->name('product.update');
+
 
 // Route::get('/admin/addblog',[BlogController::class, 'index'])->name('addblog');
-
-// Route::get('/admin/mng_products',[ProductController::class, 'show'])->name('manageproduct');
 
 // Route::get('/admin/mng_blog',[BlogController::class, 'show'])->name('manageblog');
 

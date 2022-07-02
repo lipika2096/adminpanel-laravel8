@@ -15,119 +15,125 @@
         </div>
         <div class="grid grid-cols-12 gap-6 mt-5">
             <div class="intro-y col-span-12 lg:col-span-12">
+            <form method="post" action="{{route('product.insert')}}" enctype="multipart/form-data">
+            @csrf
                 <!-- BEGIN: Form Layout -->
                 <div class="intro-y box p-5">                    
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Select Category</label>
-                        <select data-placeholder="Select Category" class="tail-select w-full" id="crud-form-2" >
+                        <select data-placeholder="Select Category" class="tail-select w-full" id="crud-form-2" name="ddcategory">
                         <option value="0" selected>---Select Category---</option>
-                        <option value="1">Microscopes</option>
+                        @foreach($data_category as $list_cat)
+                            <option value="{{$list_cat->id}}">{{$list_cat->category_name}}</option>
+                        @endforeach
                         </select>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-2" class="form-label">Select SubCategory</label>
-                        <select data-placeholder="Select Subcategory" class="tail-select w-full" id="crud-form-2">
+                        <select data-placeholder="Select Subcategory" class="tail-select w-full" id="crud-form-2" name="ddsubcategory">
                             <option value="0" selected>---Select Subcategory---</option>
-                            <option value="1">Microscope Subcat</option>
+                            @foreach($data_subcategory as $list_subcat)
+                                <option value="{{$list_subcat->id}}">{{$list_subcat->subcategory_name}}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <div>
+                    <div  class="mt-3">
                         <label for="crud-form-1" class="form-label">Products Name</label>
-                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Name">
+                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Name" name="product_name">
                     </div>
-                    <div>
+                    <div  class="mt-3">
                         <label for="crud-form-1" class="form-label">Product Code</label>
-                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Code">
+                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Code" name="product_code">
                     </div>
-                    <div>
+                    <div  class="mt-3">
                         <label for="crud-form-1" class="form-label">Product Price</label>
-                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Price">
+                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Price" name="product_price">
                     </div>
-                    <div>
+                    <div  class="mt-3">
                         <label for="crud-form-1" class="form-label">Product Model</label>
-                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Model">
+                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Product Model" name="product_model">
                     </div>
-                    <div>
+                    <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Availability</label>
-                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Availability">
+                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Availability" name="availability">
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-3" class="form-label">Product Quantity</label>
                         <div class="input-group">
-                            <input id="crud-form-3" type="text" class="form-control" placeholder="Product Quantity" aria-describedby="input-group-1">
+                            <input id="crud-form-3" type="text" class="form-control" placeholder="Product Quantity" aria-describedby="input-group-1" name="product_quantity">
                             
                         </div>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label>Product Description</label>
                         <div class="mt-2">
-                            <div class="editor">
+                            <div class="editor" name="product_description">
                                 <p>Product Description</p>
                             </div>
                         </div>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-3" class="form-label">Product Features</label>
                         <div class="input-group">
-                            <input id="crud-form-3" type="text" class="form-control" placeholder="Product Features" aria-describedby="input-group-1">
+                            <input id="crud-form-3" type="text" class="form-control" placeholder="Product Features" aria-describedby="input-group-1" name="product_features">
                             
                         </div>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-3" class="form-label">Add Product Images</label>
                         <div class="input-group">
-                            <input id="crud-form-3" type="file" class="form-control" accept="image/*" placeholder="Product Image" aria-describedby="input-group-1">
+                            <input id="crud-form-3" type="file" class="form-control" accept="image/*" placeholder="Product Image" aria-describedby="input-group-1" name="product_image">
                             
                         </div>
                         <img id="output" width="150px" height="120px">
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-3" class="form-label">Keyword</label>
                         <div class="input-group">
-                            <input id="crud-form-3" type="text" class="form-control" placeholder="Keywords" aria-describedby="input-group-1">
+                            <input id="crud-form-3" type="text" class="form-control" placeholder="Keywords" aria-describedby="input-group-1" name="keyword">
                             
                         </div>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-3" class="form-label">Page Desc</label>
                         <div class="input-group">
-                            <input id="crud-form-3" type="text" class="form-control" placeholder="Page Desc" aria-describedby="input-group-1">
-                            
+                            <input id="crud-form-3" type="text" class="form-control" placeholder="Page Desc" aria-describedby="input-group-1" name="page_desc">                            
                         </div>
                     </div>
-                    <div >
+                    <!-- <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Select Product-1</label>
                         <select data-placeholder="Select Products" class="tail-select w-full" id="crud-form-2" >
                             <option value="1" selected>---Select Product-1---</option>
                             <option value="1">Product-1</option>
                         </select>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-2" class="form-label">Select Product-2</label>
                         <select data-placeholder="Select Products" class="tail-select w-full" id="crud-form-2" >
                         <option value="1" selected>---Select Product-2---</option>
                             <option value="1">Product-1</option>
                         </select>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Select Product-3</label>
                         <select data-placeholder="Select Products" class="tail-select w-full" id="crud-form-2" >
                         <option value="1" selected>---Select Product-3---</option>
                             <option value="1">Product-1</option>
                         </select>
                     </div>
-                    <div >
+                    <div class="mt-3">
                         <label for="crud-form-2" class="form-label">Select Product-4</label>
                         <select data-placeholder="Select Products" class="tail-select w-full" id="crud-form-2" >
                         <option value="1" selected>---Select Product-4---</option>
                             <option value="1">Product-1</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="text-right mt-5">
-                        <button type="button" class="btn btn-primary w-24">Save</button>
+                         <input class="btn btn-primary w-24" type="submit" value="Submit">
                     </div>
                 </div>
                 <!-- END: Form Layout -->
+            </form>
             </div>
         </div>
 

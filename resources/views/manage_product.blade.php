@@ -36,24 +36,26 @@
                         </tr>
                      </thead>
                      <tbody>
+                     @foreach($data_product as $list_product)
                         <tr>
-                           <td class="border-b dark:border-dark-5">1</td>
-                           <td class="border-b dark:border-dark-5">Product 1</td>
-                           <td class="border-b dark:border-dark-5">model 1</td>
-                           <td class="border-b dark:border-dark-5">microscopes</td>
-                           <td class="border-b dark:border-dark-5">microscope subcat</td>
+                           <td class="border-b dark:border-dark-5">{{$list_product->id}}</td>
+                           <td class="border-b dark:border-dark-5">{{$list_product->product_name}}</td>
+                           <td class="border-b dark:border-dark-5">{{$list_product->product_model}}</td>
+                           <td class="border-b dark:border-dark-5">{{$list_product->category_name}}</td>
+                           <td class="border-b dark:border-dark-5">{{$list_product->subcategory_name}}</td>
                            <td class="border-b dark:border-dark-5">
-                              <center><img src="{{asset('dist/images/1646244835.jpg')}}" width="90px" height="70px" alt="1646244835.jpg"></center>
+                              <center><img src="{{url('/uploads')}}/{{$list_product->product_image}}" width="90px" height="70px" alt="1646244835.jpg"></center>
                            </td>
                            <td class="border-b dark:border-dark-5">
-                              <a href="{{route('edit_product')}}">
+                              <a href="{{url('editproduct')}}/{{$list_product->id}}">
                               <i data-feather="edit" style="color:green;"></i>
                               </a>
-                              <a onclick="return confirm('Do You want to delete it')" href="#">
+                              <a onclick="return confirm('Do You want to delete it')" href="{{url('/mng_products/destroy')}}/{{$list_product->id}}">
                                  <i data-feather="delete" style="color:red;"></i>
                               </a>
                            </td>
                         </tr>
+                        @endforeach
                      </tbody>
                   </table>
                </div>

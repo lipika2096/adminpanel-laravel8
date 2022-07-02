@@ -18,59 +18,32 @@
             <div class="report-box-2 intro-y mt-12 sm:mt-5">
                 <div class="box sm:flex">
                     <div class="px-8 py-12 flex flex-col flex-1">
-                        <form method="post" action="">
-                            <input type="hidden" name="_token" value="6Ldd7PNeo17vptphd3D8u1jUy127s9xlMffdS4bY">
-
+                        <form method="post" action="{{route('subcategory.update')}}">
+                            <!-- <input type="hidden" name="_token" value="6Ldd7PNeo17vptphd3D8u1jUy127s9xlMffdS4bY"> -->
+                            @csrf
+                            
+                            <input type="hidden" class="form-control" name="id" value="{{$subcat->id}}">
                             <div> 
                                 <label for="vertical-form-1" class="form-label">Select Category name</label> <select id="category_name" name="category_name" required="" class="form-control">
                                         <option value="0">----Select Category----</option>
-                                        <option value="1" selected>microscopes</option>
+                                        @foreach($subcat['data'] as $list)
+                                            <option value="{{$list->id}}" {{$subcat->category_name == $list->id  ? 'selected' : ''}}>{{$list->category_name}}</option>
+                                        @endforeach
                                 </select>
                             </div>
                             
                             <div> 
-                                <label for="vertical-form-1" class="form-label">Add Sub Category name</label> <input id="sub_category_name" name="sub_category_name" value="microcope subcat" type="text" required="" class="form-control" placeholder="Add Sub Category">
+                                <label for="vertical-form-1" class="form-label">Add Sub Category name</label> <input id="sub_category_name" name="subcategory_name" value="{{$subcat->subcategory_name}}" type="text" required="" class="form-control" placeholder="Add Sub Category">
                             </div>
                             <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                                 <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Submit</button>
                                 <br><br>
                                 <div style="text-align: center;color:green">
                             </div>
-                                <input type="hidden" name="id" value="">
                             </div>
                         </form>
                         <div class="relative text-3xl font-bold mt-12 pl-4"> 
                             <span class="absolute text-xl top-0 left-0"></span>
-                        </div>
-                    </div>
-                    <div class="px-9 py-12 flex flex-col justify-center flex-1 border-t sm:border-t-0 sm:border-l border-gray-300 dark:border-dark-5 border-dashed">
-                        <div class="mt-1.5 flex items-center">
-                        <table class="table">
-                            <thead>
-                                <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                                    <th class="whitespace-nowrap">S.No</th>
-                                    <th class="whitespace-nowrap">Category</th>
-                                    <th class="whitespace-nowrap">Sub Category</th>
-                                    <th class="whitespace-nowrap">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border-b dark:border-dark-5">1</td>
-                                    <td class="border-b dark:border-dark-5">microscopes</td>
-                                    <td class="border-b dark:border-dark-5">microscope subcat</td>
-                                    <td class="border-b dark:border-dark-5">
-                                    <a href="http://nsonindia.com/nsonindia.com/public/admin/cat/edit/1">
-                                        <i data-feather="edit" style="color:green;"></i>
-                                    </a>
-                                    |
-                                    <a onclick="return confirm('Do you want to delete it')" href="http://nsonindia.com/nsonindia.com/public/admin/cat/delete/1">
-                                        <i data-feather="delete" style="color:red;"></i>
-                                    </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                         </div>
                     </div>
                 </div>

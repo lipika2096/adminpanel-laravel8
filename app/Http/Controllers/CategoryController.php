@@ -46,6 +46,7 @@ class CategoryController extends Controller
         $model->save();
         $result['data']= category::all(); 
         return view('addcategory',$result);
+        
     }
 
     /**
@@ -67,9 +68,10 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(category $category,$id)
     {
-        //return view('edit_category');
+        $cat = category::find($id);
+        return view('edit_category',compact('cat'));
     }
 
     /**
@@ -81,7 +83,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        $model = category::find($request->id); //  Model Name;
+        $model->category_name = $request->post('category_name'); ;
+        $model->save();
+      
+        $result['data'] = category::all(); // without Facades
+        return view('addcategory',$result);
     }
 
     /**
