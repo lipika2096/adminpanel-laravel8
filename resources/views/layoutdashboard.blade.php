@@ -740,7 +740,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <nav class="side-nav">
                     <ul>
                         <li>
-                            <a href="javascript:;.html" class="side-menu side-menu">
+                            <a href="dashboard" class="side-menu side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title">
                                     Dashboard 
